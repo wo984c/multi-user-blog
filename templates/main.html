@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for post in posts %}
+
+<div class="row">
+
+    <div class="col-md-12 col-sm-12 col-lg-12">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+
+                <a href="/{{post.key().id()}}"> {{post.subject}}</a>
+
+                <br>
+
+                {{post.author}} - {{post.created.strftime("%b %d, %Y at %H:%M")}} - likes {{post.like}}
+
+            </div>
+
+            <div class="panel-body text-justify">
+
+                <p class="lead">{{post.content}}</p>
+
+            </div>
+
+            <div class="panel-footer">
+
+                {% for c in comments %}
+
+                    {% if c.post_subj == post.subject %}
+
+                    <div class="footer-subtitle">
+
+                        {{c.author}} - {{c.created.strftime("%b %d, %Y at %H:%M")}}
+                    
+                    </div>
+                    
+                    <div class="panel-body text-justify">
+                        
+                        <p class="well lead">{{c.comment}}</p>
+                    
+                    </div>
+
+                    {% endif %}
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>     
+
+</div>
+
+
+{% endfor %}
+
+<script type="text/javascript">
+    
+    $(document).ready(function(e){
+
+        var y = $('div.panel-footer');
+
+        $.each(y, function(i, val){
+            if(val.childElementCount == 0){$(this).hide()};
+        });
+       
+    });
+
+</script>
+
+{% endblock %}
+
+

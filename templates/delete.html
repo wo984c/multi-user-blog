@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-12 col-sm-12 col-lg-12">
+
+    	<div class="alert err-text">
+    		You have successfully {{action}} the {{type}}.
+    	</div>
+
+    	<div class="errBack">
+
+            <a href="{{ '/%s'%post_id }}"><span class="glyphicon glyphicon-chevron-left"></span>back</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

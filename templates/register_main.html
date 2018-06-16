@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+
+     <div class="col-md-6 col-sm-6 col-lg-6">
+
+        <div class="panel">
+
+            <div class="panel-heading">Instructions</div>
+
+                <div class="panel-body">
+
+                <ul>
+
+                    <li>Username needs to be 6 characters long</li>
+                    <li>Password needs to be 8 characters minimum, contain a combination of Uppercase, lowercase, and numbers</li>
+                    <li>Email is optional. However, it should be a valid email format (Ex wo984c@gmail.com).</li>
+
+                </ul>
+
+                </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-lg-6">
+
+        <div class="panel">
+
+            <div class="panel-heading">User Signup</div>
+
+                <div class="panel-body">
+
+                    <form name="signup" method="post">
+
+                        <div class="form-group">
+
+                            <label for="username">Username *</label>
+
+                            <input id="username" name="username" value="{{username}}" class="form-control" type="text" required>
+
+                            <span id="error_username" class="text-danger">{{error_username}}</span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="password">Password *</label>
+
+                            <input id="password" name="password" class="form-control" type="password" required>
+
+                            <span id="error_password" class="text-danger">{{error_password}}</span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="verify">Verify Password *</label>
+
+                            <input id="verify" name="verify" class="form-control" type="password" requiredx>
+
+                            <span id="error_verify" class="text-danger">{{error_verify}}</span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="email">Email(optional) *</label>
+
+                            <input id="email" name="email" class="form-control" type="email">
+
+                            <span id="error_email" class="text-danger"></span>
+
+                        </div>
+
+                        <button id="submit" type="submit" value="submit" class="btn btn-primary center">Submit</button>
+
+                    </form>
+
+                </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    
+    $(document).ready(function(e){
+
+        $('#username').focus();
+       
+    });
+
+</script>
+
+{% endblock %}

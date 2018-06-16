@@ -1,0 +1,166 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Shadows Into Light';
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #676858;
+}
+
+
+img, embed, object, video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #337ab7;
+    text-decoration: none;
+    padding: 0px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+
+h3 {
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0px;
+    margin-top: 6px;
+    margin-bottom: 2px;
+}
+
+.alert {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: red;
+}
+
+.panel-heading>a {
+    font-size: 24px;
+
+}
+
+.panel-footer {
+    font-size: 22px;
+    background: none;
+}
+
+.footer-subtitle {
+    font-size: 14px;
+}
+
+.commentHead {
+    padding-top: 12px;
+}
+
+.commentBody {
+    background-color: beige;
+}
+
+.title-super {
+    font-size: 30px;
+}
+
+.title-logo {
+    margin-top: 12px;
+    padding-bottom: 10px;
+}
+
+.errBack {
+    font-size: 18px;
+    color: black;
+}
+
+.err-text {
+    font-size: 24px;
+    padding-left: 0px;
+    margin-left: 0px;
+
+}
+
+navbar-inverse {
+    background-color: #D3D3D3;
+}
+
+
+p {
+    padding-top: 10px;
+    text-indent: 2.5%;
+    font-size: 18px;
+}
+
+
+hr {
+    height: 3px;
+    border: 3px;
+}
+
+
+@media screen and (min-width: 992px) {
+    .container {
+        width: 800px;
+    }
+
+}
+
+
+/* Modifies font size - Resolution between 768px and 992px*/
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .title-super {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+}
+
+
+/* Modifies font size - Resolution between 480px and 767px*/
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .title-super {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+}
+
+
+/* Modifies font size - Resolution between 370px and 479px*/
+@media screen and (min-width: 360px) and (max-width: 479px){
+    .title-super {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+}
+
+
+/* Modifies font size - Resolution between 320px and 359px*/
+@media screen and (min-width: 320px) and (max-width: 359px){
+
+    .title-super {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+}

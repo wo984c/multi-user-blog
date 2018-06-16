@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+        <div class="panel">
+
+            <div class="panel-heading">New Comment for <a href="/blog/{{pkey.id()}}">{{subject}}</a></div>
+
+            <div class="panel-body">
+
+                <p>{{content}}</p>
+
+                <form name="form" method="post">
+
+                    <div class="form-group">
+
+                        <label for="comment_lbl">Comment *</label>
+
+                        <textarea class="form-control" input name="comment" rows="8" required id="new">{{comment}}</textarea>
+
+                        <input type="hidden" name="author" value="{{user.username}}">
+
+                    </div>
+
+                    <div class="alert">
+
+                        <strong>{{error}}</strong>
+
+                    </div>
+
+                    <div class="form_button">
+
+                        <button type="submit" value="submit">Submit</button>
+
+                        <a href="/{{pkey.id()}}">
+
+                            <button type="button">Cancel</button>
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    
+    $(document).ready(function(e){
+
+        $('#new').focus();
+       
+    });
+
+</script>
+
+{% endblock %}

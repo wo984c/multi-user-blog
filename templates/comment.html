@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="span8">
+
+            <h2>{{p.subject}}</h2>
+
+            <h6>{{p.created.strftime("%b %d, %Y at %H:%M")}}</h6>
+
+            <pre>{{p.content}}</pre>
+
+        </div>
+
+    </div>
+
+{% endblock %}

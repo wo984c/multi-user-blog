@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h5>{{subject}}</h5>
+</div>
+
+<form name="editform" method="post">
+
+    <div>
+
+        <textarea input name="content" rows="8" cols="50">{{content}}</textarea>
+
+    </div>
+
+    <div>
+
+        <span>{{error}}</span>
+
+    </div>
+
+    <div>
+
+        <button type="submit" value="submit">Submit</button>
+
+        <a href="{{ '/delcomment/%s' %post_id }} "{{post_id}} ><button type="button"> Delete </button> </a>
+
+        <a href="{{ '/%s' %parent_id }}">
+
+            <button type="button">Cancel</button>
+
+        </a>
+
+    </div>
+
+</form>
+
+{% endblock %}
