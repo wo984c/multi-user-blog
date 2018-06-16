@@ -27,13 +27,14 @@ Within the download you'll find the following files:
 
 Clone the repo from github by running
 ``` sh
-git clone https://github.com/wo984c/########
+git clone https://github.com/wo984c/multi-user-blog.git
 
 ```
 Load the application by running
-	sh
+``` sh
 dev_appserver.py .
-...
 
-For the live version click [here](https://xxx.appspot.com)
+```
+
+For the live version click [here](https://wo984c-mublog.appspot.com)
 
