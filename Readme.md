@@ -35,6 +35,16 @@ Load the application by running
 dev_appserver.py .
 
 ```
-
 For the live version click [here](https://wo984c-mublog.appspot.com)
 
+### Implemented Features
+
+* Front page lists blog posts
+* Posts have their own page
+* Form for user registration
+* Form to submit new entries
+* Set Cookie on login
+* Destroy cookie on logout
+* Only the author can edit or delete his/her post or comment
+* Can't like your own post
+* Users can comment on posts
