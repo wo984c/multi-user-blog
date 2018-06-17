@@ -51,7 +51,7 @@ def like_key(name='default'):
     return db.Key.from_path('Like', name)
 
 
-# Authentication
+# Takes a string and returns s|HASH
 
 def make_secure_val(val):
     return "%s|%s" % (val, hmac.new(secret, val).hexdigest())
@@ -63,9 +63,13 @@ def check_secure_val(secure_val):
         return val
 
 
+# Returns a string of 5 random chars using random func
+
 def make_salt(length=5):
     return ''.join(random.choice(letters) for x in xrange(length))
 
+
+# Returns a hashed password using sha256
 
 def make_pw_hash(username, password, salt=None):
     if not salt:
@@ -73,6 +77,8 @@ def make_pw_hash(username, password, salt=None):
     h = hashlib.sha256(username + password + salt).hexdigest()
     return '%s,%s' % (salt, h)
 
+
+# Returns true if a user's password matches its hash
 
 def valid_pw(username, password, h):
     salt = h.split(',')[0]

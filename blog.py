@@ -220,7 +220,7 @@ class LikePost(Handler):
                     self.render("error.html", username=current_user,
                                 error=error, post_id=post_id)
             else:
-                    error = "the author can't like his/her own page."
+                    error = "the author can't like his/her own post."
                     self.render("error.html", username=current_user,
                                 error=error, post_id=post_id)
         else:
