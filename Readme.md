@@ -36,7 +36,7 @@ _Login to gcloud_
 # gcloud auth login
 ```
 
-_Create the project id [here](https://console.cloud.google.com/)_
+_Create the project id [here](https://console.cloud.google.com/)._
 
 _Deploy the app_
 
@@ -46,6 +46,6 @@ _Deploy the app_
 
 ### License
 
-Multi User Blog is released under the [MIT license](https://github.com/wo984c/multi-user-blog/LICENSE.txt).
+Multi User Blog is released under the [MIT license](https://github.com/wo984c/multi-user-blog/blob/master/LICENSE.txt).
 
 
