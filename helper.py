@@ -7,6 +7,7 @@ import webapp2
 import jinja2
 from string import letters
 from google.appengine.ext import db
+from functools import wraps
 
 
 # JINJA Configuration
@@ -95,3 +96,14 @@ def valid_password(password):
 
 def valid_email(email):
     return EMAIL_RE.match(email)
+
+
+def login_required(function):
+    @wraps(function)
+    def wrapper(self, post_id):
+        if not self.user:
+            return self.redirect('/login')
+
+        return function(self, post_id) 
+
+    return wrapper
