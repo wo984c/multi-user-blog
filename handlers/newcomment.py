@@ -9,27 +9,27 @@ from models.comment import *
 # Post the comment.
 
 class NewComment(Handler):
+
+    @login_required
     def get(self, post_id):
-        if not self.user:
-            self.redirect("/login")
+        post = Post.get_by_id(int(post_id), parent=blog_key())
+
+        if not post:
+            self.error(404)
             return
 
-        else:
-            post = Post.get_by_id(int(post_id), parent=blog_key())
-            subject = post.subject
-            content = post.content
-            self.render("newcomment.html", subject=subject, content=content,
-                    pkey=post.key())
+        subject = post.subject
+        content = post.content
+        self.render("newcomment.html", subject=subject, content=content,
+                pkey=post.key())
 
+    @login_required
     def post(self, post_id):
         key = db.Key.from_path('Post', int(post_id), parent=blog_key())
         post = db.get(key)
         if not post:
             self.error(404)
             return
-
-        if not self.user:
-            self.redirect('login')
 
         comment = self.request.get('comment')
 

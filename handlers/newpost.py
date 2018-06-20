@@ -15,17 +15,20 @@ class NewPost(Handler):
             self.render("login.html")
 
     def post(self):
-        subject = self.request.get('subject')
-        content = self.request.get('content')
-        author = str(self.user.username)
+        if self.user:
+            subject = self.request.get('subject')
+            content = self.request.get('content')
+            author = str(self.user.username)
 
-        if subject and content:
-            p = Post(parent=blog_key(), subject=subject, content=content,
-                     author=author, like=0)
-            p.put()
-            self.redirect('%s' % str(p.key().id()))
+            if subject and content:
+                p = Post(parent=blog_key(), subject=subject, content=content,
+                         author=author, like=0)
+                p.put()
+                self.redirect('%s' % str(p.key().id()))
 
+            else:
+                error = "subject and content, please!"
+                self.render("form.html", subject=subject, content=content,
+                            error=error)
         else:
-            error = "subject and content, please!"
-            self.render("form.html", subject=subject, content=content,
-                        error=error)
+            self.render("login.html")
