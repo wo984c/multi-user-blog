@@ -1,6 +1,5 @@
 from google.appengine.ext import db
 from helper import *
-#from models.user import *
 
 # Post Model
 
