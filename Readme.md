@@ -1,50 +1,51 @@
-# PROJECT: Multi User Blog
+# Multi User Blog
 
-Very simple multi-user blog where users post content, comment on other users posts, and like other users' posts. Login is required in order to be able to submit a post or comment. Only the author of the post or comment has the right to edit or delete content. The author can't like his/her own post.
+Very simple multi-user blog where users post, comment, and even like other users posts. 
 
+## Demo
 
+For the live version click _[here](https://wo984c-mublog.appspot.com)._
 
 ## Quick Start
 ### Software Requirements
-1. Python Version 2.7 - Refer to the [Beginners Guide](https://wiki.python.org/moin/BeginnersGuide/Download) for installation instructions
-2. Google App Engine SDK - Refer to [Download the Cloud SDK URL](https://cloud.google.com/appengine/docs/standard/python/download)
+1. Python Version 2.7 -_[Beginners Guide](https://wiki.python.org/moin/BeginnersGuide/Download)_
+2. Google App Engine SDK -_[Download the Cloud SDK URL](https://cloud.google.com/appengine/docs/standard/python/download)._
 
-
-### What is included
-
-Within the download you'll find the following files:
-
-* model.py - data models
-* helper.py - helper functions
-* handler.py - handler class
-* blog.py - application code
-* app.yaml - app settings
-* templates directory - html templates
-* static directory - java scripts, css, fonts, and images 
-* README.md - this readme file
+### Frameworks
+* Bootstrap
+* jQuery
 
 ### How to run the multi-user blog
 
-Clone the repo from github by running
+_Clone the repo from github_
 ``` sh
-git clone https://github.com/wo984c/multi-user-blog.git
-
+# git clone https://github.com/wo984c/multi-user-blog.git
 ```
-Load the application by running
+_Load the application locally_
 ``` sh
-dev_appserver.py .
-
+# dev_appserver.py .
 ```
-For the live version click [here](https://wo984c-mublog.appspot.com)
 
-### Implemented Features
+_Go to http://localhost:8080/_
 
-* Front page lists blog posts
-* Posts have their own page
-* Form for user registration
-* Form to submit new entries
-* Set Cookie on login
-* Destroy cookie on logout
-* Only the author can edit or delete his/her post or comment
-* Can't like your own post
-* Users can comment on posts
+**Deploy the application to appspot.com (optional)**
+
+_Login to gcloud_
+
+``` sh
+# gcloud auth login
+```
+
+_Create the project id [here](https://console.cloud.google.com/)_
+
+_Deploy the app_
+
+``` sh
+# gcloud app deploy app.yaml --project <proj_id>
+```
+
+### License
+
+Multi User Blog is released under the [MIT license](https://github.com/wo984c/multi-user-blog/LICENSE.txt).
+
+
